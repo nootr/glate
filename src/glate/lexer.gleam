@@ -8,10 +8,10 @@ pub type Token {
   ExpressionEndToken
   ExpressionStartToken
   TextToken(String)
-  WhitespaceToken(String)
 }
 
 /// Convert source code into a list of tokens.
+///
 pub fn tokenize(source: String) -> List(Token) {
   case source {
     "" -> []

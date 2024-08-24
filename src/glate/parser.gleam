@@ -13,6 +13,8 @@ pub type Node {
   VariableNode(String)
 }
 
+/// Parse an expression
+///
 fn parse_expression(
   tokens: List(lexer.Token),
 ) -> Result(#(List(Node), List(lexer.Token)), GlateError) {
@@ -34,6 +36,7 @@ fn parse_expression(
 }
 
 /// Convert a list of tokens into a list of nodes
+///
 pub fn parse(tokens: List(lexer.Token)) -> Result(List(Node), GlateError) {
   case tokens {
     [] -> Ok([])
